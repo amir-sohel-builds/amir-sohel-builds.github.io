@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amir Sohel | Staff Technical Program Manager</title>
+  <meta name="description" content="Amir Sohel is a Staff Technical Program Manager at Warner Bros. Discovery who builds agentic AI platforms that work in production.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t) { t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { document.documentElement.setAttribute("data-theme", "light"); }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#overview" data-tab-link="overview"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0154fc"/><text x="27" y="45" font-family="'Space Grotesk', Arial, sans-serif" font-size="37" font-weight="700" fill="#ffffff" text-anchor="middle">A</text><circle cx="45.5" cy="41" r="4.2" fill="#b9d0ff"/></svg>Amir Sohel</a>
+      <div class="nav-actions">
+        <a class="nav-resume" href="resume.pdf" download>Resume</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="tabbar" role="tablist" aria-label="Portfolio sections">
+        <button class="tab is-active" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true" data-tab="overview">Overview</button>
+        <button class="tab" type="button" role="tab" id="tab-work" aria-controls="panel-work" aria-selected="false" data-tab="work">Work</button>
+        <button class="tab" type="button" role="tab" id="tab-skills" aria-controls="panel-skills" aria-selected="false" data-tab="skills">Skills</button>
+        <button class="tab" type="button" role="tab" id="tab-notes" aria-controls="panel-notes" aria-selected="false" data-tab="notes">Notes</button>
+        <button class="tab" type="button" role="tab" id="tab-contact" aria-controls="panel-contact" aria-selected="false" data-tab="contact">Contact</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ OVERVIEW ============ -->
+    <section class="tab-panel" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+
+      <div class="hero wrap">
+        <p class="kicker reveal">Staff Technical Program Manager · Platform Engineering · Agentic AI Infrastructure</p>
+        <h1 class="reveal">I build distributed agentic AI platforms, live at global scale.</h1>
+        <p class="sub reveal">Staff Technical Program Manager at Warner Bros. Discovery. I lead the agentic AI platform behind HBO Max, from the first prototype to dozens of agents running in production today.</p>
+        <p class="hero-meta reveal">Canadian citizen · TN eligible · Open to US relocation</p>
+        <p class="hero-cta reveal">
+          <button class="btn btn-primary" type="button" data-tab-link="work">See the work</button>
+          <a class="btn btn-ghost" href="resume.pdf" download>Download resume</a>
+        </p>
+      </div>
+
+      <div class="wrap">
+        <div class="stats" aria-label="Impact in numbers">
+          <div class="stat reveal">
+            <p class="stat-value"><span class="count" data-target="130" data-decimals="0">130</span><span class="stat-suffix">M+</span></p>
+            <p class="stat-label">Subscribers on the platform</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat-value"><span class="count" data-target="43" data-decimals="0">43</span><span class="stat-suffix">%</span></p>
+            <p class="stat-label">Cloud spend cut in a year</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat-value"><span class="count" data-target="99.995" data-decimals="3">99.995</span><span class="stat-suffix">%</span></p>
+            <p class="stat-label">Uptime on peak premiere nights</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat-value"><span class="stat-prefix">Under </span><span class="count" data-target="4" data-decimals="0">4</span><span class="stat-suffix"> hrs</span></p>
+            <p class="stat-label">Deployments, down from three days</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section wrap">
+        <p class="kicker reveal">The journey</p>
+        <h2 class="reveal">Where I started, and what I do now.</h2>
+
+        <div class="journey">
+          <article class="jstop reveal">
+            <p class="jstop-when">2014</p>
+            <div>
+              <h3>Started as a software engineer</h3>
+              <p>Backend systems at Cognizant, building for a Fortune 100 retailer: payments, inventory, pricing. Distributed systems in Java and Spring Boot, with REST and GraphQL APIs, built for peak days when traffic spikes to tens of thousands of transactions a minute across thousands of stores. This is where I learned what "it has to work" means.</p>
+            </div>
+          </article>
+          <article class="jstop reveal">
+            <p class="jstop-when">2022</p>
+            <div>
+              <h3>Senior TPM, Xactly</h3>
+              <p>Moved into program management at a B2B SaaS company. Identity transformation, platform modernization, and a security remediation program that closed every finding on schedule.</p>
+            </div>
+          </article>
+          <article class="jstop reveal">
+            <p class="jstop-when">2025</p>
+            <div>
+              <h3>Staff TPM, Warner Bros. Discovery</h3>
+              <p>The platform engineering organization behind HBO Max and WBD streaming. I am the program lead for the platforms those teams build on.</p>
+            </div>
+          </article>
+          <article class="jstop reveal">
+            <p class="jstop-when">Today</p>
+            <div>
+              <h3>I run an agentic AI platform</h3>
+              <p>Built from 0 to 1: dozens of agents live in production, with the evals, guardrails, and operating model that keep them safe to run.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="section wrap">
+        <p class="kicker reveal">Why me</p>
+        <h2 class="reveal">Agentic platforms are the thing I do.</h2>
+        <p class="body reveal">If a team needs an agentic platform that survives contact with production, this is the record they are buying.</p>
+
+        <div class="pillars">
+          <article class="pillar reveal">
+            <h3>Shipped, not theorized</h3>
+            <p>The platform is not a pilot. Dozens of agents run in production today, on real traffic, for a streaming service with 130M+ subscribers.</p>
+          </article>
+          <article class="pillar reveal">
+            <h3>I build it myself</h3>
+            <p>Eight years as a backend engineer before program management, building distributed systems in Java and Spring Boot, with REST and GraphQL APIs that had to hold up at retail scale. I still write agents and tools with the Claude API and Amazon Bedrock, so the architecture calls are grounded in code, not slides.</p>
+          </article>
+          <article class="pillar reveal">
+            <h3>Safe to run</h3>
+            <p>Evals before release, prompt versioning, rollback, guardrails, observability. I also built source-first guardrails that teams add to their own agents, so an agent checks its sources first and refuses instead of inventing an answer.</p>
+          </article>
+          <article class="pillar reveal">
+            <h3>The operating model comes with it</h3>
+            <p>Intake, prioritization, weekly execution, monthly reviews. A platform is a program, not a launch, and I run it like one.</p>
+          </article>
+        </div>
+
+        <p class="kicker reveal" style="margin-top: 72px;">How I work</p>
+        <h2 class="reveal">The craft.</h2>
+        <div class="pillars">
+          <article class="pillar reveal">
+            <h3>Stay technical</h3>
+            <p>I read the code, build the prototypes, and sit in the architecture debate. The T in TPM is not decorative.</p>
+          </article>
+          <article class="pillar reveal">
+            <h3>Dream it, own it</h3>
+            <p>If I take a program on, it is mine end to end: the plan, the tradeoffs, the result, and the postmortem.</p>
+          </article>
+          <article class="pillar reveal">
+            <h3>Lead with empathy</h3>
+            <p>Programs run on people. I communicate early, say the hard thing plainly, and make sure the credit lands on the team.</p>
+          </article>
+          <article class="pillar reveal">
+            <h3>Live in the future</h3>
+            <p>Build for where the work is going. Every platform choice gets asked what it looks like in two years.</p>
+          </article>
+          <article class="pillar reveal">
+            <h3>Long-term impact first</h3>
+            <p>Quick wins are fine. Compounding ones are better. I plan for the second kind.</p>
+          </article>
+          <article class="pillar reveal">
+            <h3>Move fast, with guardrails</h3>
+            <p>Speed is safe when evals, versioning, and rollback are already in place. Then fast is just fast.</p>
+          </article>
+        </div>
+
+        <p class="group-head reveal">Built by hand</p>
+        <p class="body reveal">Program management is my job. Building is how I stay honest about what the work actually takes.</p>
+        <div class="cards">
+          <article class="card reveal">
+            <p class="card-top"><span class="live-badge"><span class="live-dot"></span>Live</span></p>
+            <h3>Discover Canada: Citizenship Test Prep</h3>
+            <p>I built this while preparing for my own Canadian citizenship test. Category quizzes, a timed test mode, 60 flashcards, and a one-page cheat sheet. It is live, and strangers use it.</p>
+            <p class="card-link"><a href="https://amir0225.github.io/canadacitizentestprep/" target="_blank" rel="noopener">Open the app</a></p>
+          </article>
+
+          <article class="card reveal">
+            <p class="card-top"><span class="card-tag">Developer docs</span></p>
+            <h3>Platform docs, in one place</h3>
+            <p>Developer docs were scattered across pages nobody could find. I built one site that lays out onboarding and the platform journey end to end, so a new engineer can find the answer without asking around.</p>
+          </article>
+
+          <article class="card reveal">
+            <p class="card-top"><span class="card-tag">Personal tooling</span></p>
+            <h3>Signal, a personal assistant app</h3>
+            <p>An app I built for me and my team. It collects the mentions and follow-ups scattered across my work tools into one place for the day: a focus list for the week, goal health at a glance, and alerts when something needs me. A built-in launcher starts any agent in the library with one click. It runs locally and adapts to whoever opens it.</p>
+          </article>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="tab-panel" id="panel-work" role="tabpanel" aria-labelledby="tab-work" hidden>
+      <div class="section wrap panel-top">
+        <p class="kicker reveal">Selected work</p>
+        <h2 class="reveal">The work, with the receipts.</h2>
+
+        <article class="case reveal">
+          <p class="case-index">01</p>
+          <h3>An agentic AI platform, built 0 to 1</h3>
+          <div class="case-grid">
+            <div>
+              <p class="case-label">The problem</p>
+              <p>Every team was building its own agents. No shared runtime, no intake, and no bar for what could ship to production.</p>
+            </div>
+            <div>
+              <p class="case-label">What I did</p>
+              <p>Built the platform from 0 to 1 as the program lead. Set the operating model, weekly execution syncs and monthly leadership reviews, and made every release eval-gated, with prompt versioning and rollback.</p>
+            </div>
+            <div>
+              <p class="case-label">The result</p>
+              <p>Dozens of agents live in production, used by engineering and product teams across the streaming business. The busiest ones triage incidents and screen changes before they ship.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="case reveal">
+          <p class="case-index">02</p>
+          <h3>Cloud spend, cut 43% in a year</h3>
+          <div class="case-grid">
+            <div>
+              <p class="case-label">The problem</p>
+              <p>After a major migration, cloud spend had ballooned, with idle and duplicated resources spread across a very large AWS footprint.</p>
+            </div>
+            <div>
+              <p class="case-label">What I did</p>
+              <p>Ran the cleanup as a program: an owner and a date for every workload, and a hard rule that nothing customer-facing breaks.</p>
+            </div>
+            <div>
+              <p class="case-label">The result</p>
+              <p>Spend down 43% year over year, and it stayed down. No customer impact.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="case reveal">
+          <p class="case-index">03</p>
+          <h3>Reliability and delivery, rebuilt</h3>
+          <div class="case-grid">
+            <div>
+              <p class="case-label">The problem</p>
+              <p>Deployments took three days, releases were nerve-wracking, and support toil was eating the platform team.</p>
+            </div>
+            <div>
+              <p class="case-label">What I did</p>
+              <p>Drove deployment automation with one-click rollbacks, studied the support queue to find what to automate first, and built the reporting the team now runs on.</p>
+            </div>
+            <div>
+              <p class="case-label">The result</p>
+              <p>Deployments under four hours. Support ticket volume down more than a quarter. 99.995% uptime on the biggest premiere nights.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="tab-panel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" hidden>
+      <div class="section wrap panel-top">
+        <p class="kicker reveal">The shelf</p>
+        <h2 class="reveal">What I build with.</h2>
+        <p class="body reveal">This is the shelf: the agents, guardrails, and reporting I built for the platform I run. Nobody has to chase status. The systems report themselves.</p>
+
+        <p class="group-head reveal">The platform, in production</p>
+        <div class="cards">
+          <article class="card card-wide reveal">
+            <p class="card-top"><span class="live-badge"><span class="live-dot"></span>Live</span></p>
+            <h3>Agents inside the workflows engineers already use</h3>
+            <p>The platform&rsquo;s agents do first-pass incident triage, with the context attached before the on-call even opens the case. They screen change requests against history before the change ships, and they categorize and route the support and planning work that used to eat the team&rsquo;s week. Underneath sit the platform services: model access, an agent runtime, a tool gateway, and observability. Every agent ships behind eval gates, with versioned prompts and rollback ready.</p>
+          </article>
+        </div>
+
+        <p class="group-head reveal">Source-first guardrails</p>
+        <div class="cards">
+          <article class="card card-wide reveal">
+            <p class="card-top"><span class="card-tag">Guardrails</span></p>
+            <h3>Three rules so agents answer from sources</h3>
+            <p>A small set of guardrails I wrote, published for other teams to add to their own agents. They exist because agents sound confident when they are guessing, and a confident wrong answer costs more than no answer.</p>
+            <ul class="dash-list">
+              <li><strong>Declare before answering</strong><span>The agent states what it knows, what it is inferring, and what it cannot verify, before it answers. Past a point, it refuses.</span></li>
+              <li><strong>Look it up at the source</strong><span>When there is a gap, the agent checks the source you name: a document, a codebase, a record. If the answer is not there, it says so instead of improvising.</span></li>
+              <li><strong>Verify your own work</strong><span>Before an agent can report done or fixed, it has to show what it checked, what scope it covered, and what it might have missed.</span></li>
+            </ul>
+          </article>
+          <article class="card card-wide reveal">
+            <p class="card-top"><span class="card-tag">Cost</span></p>
+            <h3>Model routing, so cost stays honest</h3>
+            <p>Large file reads and document fetches are the quiet budget killer in agent work. I built a routing step that sends those reads to a small, fast model first: it extracts the content into compact notes, and the main model reasons over the notes. The full file never enters the expensive context, and the answers hold up. Before I shared it, I ran a fidelity check across task types to make sure the summaries were not losing what matters.</p>
+          </article>
+        </div>
+
+        <p class="group-head reveal">The agent library</p>
+        <div class="cards">
+          <article class="card card-wide reveal">
+            <p class="card-top"><span class="card-tag">Shared library</span></p>
+            <h3>One library, one install</h3>
+            <p>A shared library of agents that anyone on the platform installs once and gets all of. New agents join through a propose-and-review intake, so the shelf stays trustworthy as it grows.</p>
+          </article>
+        </div>
+        <div class="cards skills-grid">
+          <article class="card reveal">
+            <p class="card-top"><span class="card-tag">Engineering</span></p>
+            <h3>Engineering agents</h3>
+            <p>Staff-level code review, security and architecture review, build failure analysis, and flaky test follow-through. The review work nobody has time for, done before the human pass.</p>
+          </article>
+          <article class="card reveal">
+            <p class="card-top"><span class="card-tag">Operations</span></p>
+            <h3>Operations agents</h3>
+            <p>Incident trend and alert pattern analysis, on-call reporting, and support queue analysis that surfaces themes and automation opportunities.</p>
+          </article>
+          <article class="card reveal">
+            <p class="card-top"><span class="card-tag">Planning</span></p>
+            <h3>Planning agents</h3>
+            <p>Work item evaluation and decomposition, goal tracking, and roadmaps generated from live data. Planning artifacts that maintain themselves.</p>
+          </article>
+          <article class="card reveal">
+            <p class="card-top"><span class="card-tag">Knowledge</span></p>
+            <h3>Knowledge agents</h3>
+            <p>Documentation and team pages evaluated against the standards, with the gaps named instead of implied.</p>
+          </article>
+        </div>
+
+        <p class="group-head reveal">Reporting that runs itself</p>
+        <div class="cards">
+          <article class="card card-wide reveal">
+            <p class="card-top"><span class="live-badge"><span class="live-dot"></span>Live</span></p>
+            <h3>Dashboards that answer the standing questions</h3>
+            <p>I built the reporting system the platform organization runs on. Scheduled pipelines pull the numbers together, AI does the sorting nobody wants to do by hand, and the dashboards refresh on their own. Each one answers a standing question:</p>
+            <ul class="dash-list">
+              <li><strong>Goals</strong><span>How is each goal doing right now?</span></li>
+              <li><strong>Data quality</strong><span>Is the data behind our goals complete and trustworthy?</span></li>
+              <li><strong>Roadmap</strong><span>What is planned, and when?</span></li>
+              <li><strong>Capacity</strong><span>Where is engineering capacity actually going?</span></li>
+              <li><strong>Team outcomes</strong><span>What are teams delivering outside the top-level goals?</span></li>
+              <li><strong>Commitments</strong><span>Did we deliver what we committed to?</span></li>
+              <li><strong>Planning</strong><span>What does the current planning cycle look like at a glance?</span></li>
+              <li><strong>Support</strong><span>What do teams keep asking us for, and why?</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="kicker tools-kicker reveal">Daily tools</p>
+        <ul class="chips reveal">
+          <li>Claude API</li>
+          <li>Amazon Bedrock</li>
+          <li>Bedrock AgentCore</li>
+          <li>MCP</li>
+          <li>Claude Code</li>
+          <li>Java</li>
+          <li>Spring Boot</li>
+          <li>Python</li>
+          <li>TypeScript</li>
+          <li>GraphQL</li>
+          <li>REST APIs</li>
+          <li>AWS</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ NOTES ============ -->
+    <section class="tab-panel" id="panel-notes" role="tabpanel" aria-labelledby="tab-notes" hidden>
+      <div class="section wrap panel-top">
+        <p class="kicker reveal">Notes</p>
+        <h2 class="reveal">Writing on AI, and the road ahead.</h2>
+        <p class="body reveal">Short notes from the work: what it takes to run agents in production, how these platforms are put together, and where I think this goes. New notes land here as I write them.</p>
+
+        <div class="post-cards">
+          <a class="post-card reveal" href="posts/why-agents-should-say-i-dont-know.html">
+            <p class="post-meta">October 2026 · Guardrails</p>
+            <h3>Why I made my agents say I don&rsquo;t know</h3>
+            <p>A confident wrong answer is worse than no answer. The three guardrails I built so agents check first, refuse cleanly, and prove their own work.</p>
+            <p class="post-read">Read the note</p>
+          </a>
+          <a class="post-card reveal" href="posts/running-agents-in-production.html">
+            <p class="post-meta">October 2026 · Operations</p>
+            <h3>Running agents in production is an operations problem</h3>
+            <p>Anyone can demo an agent. The model was never the hard part. Evals, rollback, observability, and an operating model are why agents stay running.</p>
+            <p class="post-read">Read the note</p>
+          </a>
+          <a class="post-card reveal" href="posts/anatomy-of-an-agentic-platform.html">
+            <p class="post-meta">October 2026 · Architecture</p>
+            <h3>Anatomy of an agentic platform</h3>
+            <p>Model access, runtime, tool gateway, evaluation, observability, guardrails. The layers underneath the pitch, and what breaks without each one.</p>
+            <p class="post-read">Read the note</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="tab-panel" id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
+      <div class="section wrap panel-top contact-panel">
+        <p class="kicker reveal">Contact</p>
+        <h2 class="reveal">Let&rsquo;s talk.</h2>
+        <p class="body reveal">Open to Staff TPM roles in AI platform and infrastructure. Toronto now, happy to relocate to the US. Canadian citizen, TN eligible.</p>
+        <p class="reveal"><a class="email" href="mailto:aot.amirsohel@gmail.com">aot.amirsohel@gmail.com</a></p>
+        <p class="links reveal">
+          <a href="https://www.linkedin.com/in/asohel" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/amir-sohel-builds" target="_blank" rel="noopener">GitHub</a>
+          <a href="resume.pdf" download>Resume</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>&copy; <span id="year">2026</span> Amir Sohel</span>
+      <span>Hand-built static site. No framework, no template.</span>
+    </div>
+  </footer>
+
+  <noscript>
+    <style>
+      .tab-panel[hidden] { display: block; }
+      .tabbar { display: none; }
+    </style>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
