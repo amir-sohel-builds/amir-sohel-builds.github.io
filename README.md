@@ -1,28 +1,59 @@
-# Portfolio v6, public version
+<p align="center">
+  <img src="favicon.svg" width="72" alt="Amir Sohel monogram">
+</p>
 
-Plain HTML, CSS and JS. No framework, no build step.
+<h1 align="center">Amir Sohel</h1>
 
-## Deploy to GitHub Pages
+<p align="center"><strong>I build distributed agentic AI platforms, live at global scale.</strong></p>
 
-Repo: `amir-sohel-builds.github.io` (already created, public).
+<p align="center">Staff Technical Program Manager at Warner Bros. Discovery.<br>
+I lead the agentic AI platform behind HBO Max, from the first prototype to dozens of agents running in production today.</p>
 
-Upload the **contents** of this folder to the root of that repo, so `index.html`
-sits at the top level next to `styles.css`, `script.js`, `resume.pdf` and the
-`posts` folder. The site goes live at https://amir-sohel-builds.github.io
-a few minutes after the commit.
+<p align="center"><a href="https://amir-sohel-builds.github.io"><strong>amir-sohel-builds.github.io</strong></a></p>
 
-## Files
+---
 
-- `index.html`, the whole site: Overview, Work, Skills, Notes, Contact tabs
-- `styles.css`, palette is defined as custom properties at the top
-- `script.js`, theme toggle (saved, falls back to system), tabs with hash deep
-  links and arrow key support, and the stat counters
-- `posts/`, the Notes posts, plus `template.html` for new ones
-- `favicon.svg`, the A. monogram tile, site icon and nav mark
-- `resume.pdf`, the resume linked from the nav and the Contact tab
+## Selected impact
 
-## Add a note
+- **130M+ subscribers** on the platform my work supports
+- **43% cloud spend cut** in a year, with no customer impact
+- **99.995% uptime** on peak premiere nights
+- **Deployments from three days to under four hours**, with one-click rollbacks
+- **Dozens of agents live in production**, eval-gated and safe to run
 
-1. Copy `posts/template.html`, rename it, fill in the TODO spots.
-2. Add a card for it in the Notes tab of `index.html`.
-3. Upload both files.
+## What is on the site
+
+- **Overview**: where I started, what I do now, and how I work
+- **Work**: three programs, with the problem, the work, and the result
+- **Skills**: the platform in production, source-first guardrails, the agent library, and reporting that runs itself
+- **Notes**: short writing on running agents in production
+- **Contact**: email, LinkedIn, GitHub, and my resume
+
+## Notes
+
+- [Why I made my agents say I don't know](https://amir-sohel-builds.github.io/posts/why-agents-should-say-i-dont-know.html)
+- [Running agents in production is an operations problem](https://amir-sohel-builds.github.io/posts/running-agents-in-production.html)
+- [Anatomy of an agentic platform](https://amir-sohel-builds.github.io/posts/anatomy-of-an-agentic-platform.html)
+
+## How it is built
+
+Plain HTML, CSS, and JavaScript. No framework, no build step, no template.
+
+- Light and dark themes, saved per visitor, following the system by default
+- Tabs with deep links, so `index.html#notes` opens the right section
+- Full keyboard support on the tabs, visible focus, reduced motion respected
+- Animated counters on the stats band, and nothing else that moves without being asked
+
+## Run it locally
+
+Clone or download this repository and open `index.html` in a browser. That is all it takes.
+
+## Contact
+
+- Email: [aot.amirsohel@gmail.com](mailto:aot.amirsohel@gmail.com)
+- LinkedIn: [linkedin.com/in/asohel](https://www.linkedin.com/in/asohel)
+- GitHub: [github.com/amir-sohel-builds](https://github.com/amir-sohel-builds)
+
+---
+
+© 2026 Amir Sohel
