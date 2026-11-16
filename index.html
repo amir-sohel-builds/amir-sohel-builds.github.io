@@ -46,7 +46,7 @@ body { background: var(--paper); color: var(--ink); font: 400 18px/1.6 var(--tex
 a { color: inherit; }
 a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 ::selection { background: var(--blue); color: #fff; }
-.wrap { max-width: 1040px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 40px); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: clamp(20px, 5vw, 40px); }
 
 /* nav */
 .nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
@@ -122,6 +122,26 @@ section { padding-top: clamp(72px, 11vh, 120px); }
 .bars div:last-child i { background: var(--blue); }
 @media (max-width: 800px) { .case { grid-template-columns: 1fr; gap: 20px; } }
 
+/* open source */
+.oss-grid { margin-top: 32px; display: grid; grid-template-columns: 5fr 7fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
+.oss-title { display: flex; align-items: center; gap: 14px; }
+.oss-title svg { width: 44px; height: 44px; flex: none; }
+.oss-lede { margin-top: 16px; font: 700 clamp(20px, 2.4vw, 26px)/1.25 var(--display); letter-spacing: -0.02em; }
+.oss-grid p { color: var(--soft); max-width: 34em; }
+.oss-grid p.oss-lede { color: var(--ink); }
+.oss-grid p + p { margin-top: 14px; }
+.facts { margin-top: 20px; list-style: none; border-top: 1px solid var(--rule); font-size: 16.5px; color: var(--soft); }
+.facts li { padding: 9px 0; border-bottom: 1px solid var(--rule); }
+.facts b { color: var(--ink); font-weight: 600; }
+.oss-grid .cta { margin-top: 24px; }
+.oss-grid .fine { margin-top: 18px; font-size: 14.5px; color: var(--muted); }
+.term { border-radius: 12px; background: #0b1220; color: #dbe4f5; border: 1px solid #25304a; overflow: hidden; }
+.term .bar { padding: 10px 18px; font: 500 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #8fa0bf; border-bottom: 1px solid #25304a; }
+.term pre { padding: 20px 22px 24px; font: 400 14.5px/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre-wrap; }
+.term .c { color: #8fa0bf; } .term .k { color: #fff; font-weight: 700; } .term .flag { color: #ffb86b; }
+.term-cap { margin-top: 12px; font-size: 15px; color: var(--muted); }
+@media (max-width: 800px) { .oss-grid { grid-template-columns: 1fr; gap: 28px; } }
+
 /* how i work */
 .about { margin-top: 28px; display: flex; align-items: center; gap: 24px; }
 .about img { width: 150px; height: 150px; border-radius: 16px; object-fit: cover; flex: none; }
@@ -166,6 +186,7 @@ footer { border-top: 1px solid var(--rule); padding: 24px 0 36px; font-size: 14p
     <a class="brand" href="#top"><img src="favicon.svg" alt="">Amir Sohel</a>
     <div class="navr"><ul>
       <li class="opt"><a href="#work">Work</a></li>
+      <li class="opt"><a href="#open-source">Open source</a></li>
       <li class="opt"><a href="#how">How I work</a></li>
       <li class="opt"><a href="#notes">Notes</a></li>
       <li class="opt"><a href="#contact">Contact</a></li>
@@ -256,6 +277,41 @@ footer { border-top: 1px solid var(--rule); padding: 24px 0 36px; font-size: 14p
         <p class="call"><b>The hard call.</b> Putting rollback in place before speeding anything up, so faster never meant riskier.</p>
       </div>
     </article>
+  </section>
+
+  <section class="oss wrap" id="open-source" aria-labelledby="oss-h">
+    <h2 id="oss-h">Open source, built in my own time</h2>
+    <div class="oss-grid">
+      <div>
+        <h3 class="oss-title"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="4" y="4" width="112" height="112" rx="26" fill="#0154FC"/><path d="M40 38 L64 60 L40 82" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><circle cx="88" cy="88" r="17" fill="#fff"/><path d="M80 88 L86 94 L97 82" fill="none" stroke="#0154FC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>agent-skills</h3>
+        <p class="oss-lede">16 TPM tools that run, not advice. Plan it, Run it, Prove it, Lead it.</p>
+        <p>Every skill ships a runnable script, a worked example, and an eval. Deterministic first: if a script can do the job, the LLM stays out of it.</p>
+        <ul class="facts">
+          <li><b>No dependencies, no network calls.</b></li>
+          <li><b>Every pull request</b> is reviewed by a bot on the repo.</li>
+          <li><b>Open to contributors.</b> MIT licensed.</li>
+        </ul>
+        <p class="cta">
+          <a class="btn primary" href="https://github.com/amir-sohel-builds/agent-skills" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn ghost" href="https://amir-sohel-builds.github.io/agent-skills/" target="_blank" rel="noopener">See the site</a>
+        </p>
+        <p class="fine">A personal project. Not my employer&rsquo;s work.</p>
+      </div>
+      <div>
+        <div class="term" role="img" aria-label="Terminal output of the risk-register tool flagging a risk with no owner">
+          <div class="bar">skills/risk-register</div>
+<pre><span class="c">$</span> <span class="k">python3 scripts/risks.py --input risks.json</span>
+
+<span class="k">## Top risks (score 15 or more)</span>
+- R1 Database cutover fails and checkout goes down (score 20, owner: Sam)
+
+<span class="k">## Flags</span>
+<span class="flag">- R3 has no owner</span>
+<span class="flag">- R3 has no mitigation</span></pre>
+        </div>
+        <p class="term-cap">A real run. The tool does the arithmetic and names what is missing. People set the numbers.</p>
+      </div>
+    </div>
   </section>
 
   <section class="how wrap" id="how" aria-labelledby="how-h">
