@@ -171,6 +171,20 @@ section { padding-top: clamp(72px, 11vh, 120px); }
   .chip { display: block; position: sticky; bottom: 12px; margin-top: 16px; padding: 12px 16px; border-radius: 10px; background: #0b1220; color: #fff; font: 700 15px var(--text); border: 1px solid #25304a; }
 }
 
+/* in the open */
+.open-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 4vw, 48px); border-top: 1px solid var(--rule); padding-top: 26px; }
+.open-grid h3 { font-size: 15px; font-weight: 600; letter-spacing: 0; color: var(--muted); margin-bottom: 10px; font-family: var(--text); }
+.open-grid p { color: var(--soft); font-size: 16.5px; }
+.open-grid a { color: var(--blue); font-weight: 600; text-decoration: none; font-size: 15.5px; } .open-grid a:hover { text-decoration: underline; }
+.open-grid .open-big { color: var(--ink); font: 800 clamp(28px, 3.6vw, 40px)/1.1 var(--display); letter-spacing: -0.03em; }
+.open-sub { margin-top: 6px; font-size: 15.5px; color: var(--muted); }
+.open-grid .feat { display: block; text-decoration: none; }
+.open-grid .feat b { display: block; font: 700 clamp(19px, 2.2vw, 23px)/1.2 var(--display); letter-spacing: -0.02em; color: var(--ink); }
+.open-grid .feat span { display: block; margin-top: 6px; font-weight: 400; font-size: 15.5px; color: var(--muted); }
+.open-grid .feat:hover b { color: var(--blue); text-decoration: none; }
+.open-grid .more { display: inline-block; margin-top: 12px; }
+@media (max-width: 800px) { .open-grid { grid-template-columns: 1fr; } }
+
 /* how i work */
 .about { margin-top: 28px; display: flex; align-items: center; gap: 24px; }
 .about img { width: 150px; height: 150px; border-radius: 16px; object-fit: cover; flex: none; }
@@ -373,6 +387,27 @@ footer { border-top: 1px solid var(--rule); padding: 24px 0 36px; font-size: 14p
     </div>
   </section>
 
+  <section class="open wrap" id="in-the-open" aria-labelledby="open-h">
+    <h2 id="open-h">In the open</h2>
+    <div class="open-grid">
+      <div>
+        <h3>agent-skills, last commit</h3>
+        <p class="open-big" id="lastCommit">Active</p>
+        <p class="open-sub" id="lastCommitMsg">17 skills, all tested, MIT licensed.</p>
+        <a class="more" href="https://github.com/amir-sohel-builds/agent-skills/commits/main" target="_blank" rel="noopener">See the commit history</a>
+      </div>
+      <div>
+        <h3>Latest note</h3>
+        <a class="feat" href="posts/the-12-questions.html"><b>The 12 questions I ask before an agent goes live</b><span>November 2026. The checklist behind the checker above.</span></a>
+      </div>
+      <div>
+        <h3>On LinkedIn</h3>
+        <p>I post what I build and think, regularly. The agent-skills launch carousel is the latest.</p>
+        <a class="more" href="https://www.linkedin.com/in/asohel/recent-activity/all/" target="_blank" rel="noopener">Follow along</a>
+      </div>
+    </div>
+  </section>
+
   <section class="how wrap" id="how" aria-labelledby="how-h">
     <h2 id="how-h">How I work</h2>
     <div class="about">
@@ -399,6 +434,7 @@ footer { border-top: 1px solid var(--rule); padding: 24px 0 36px; font-size: 14p
   <section class="notes wrap" id="notes" aria-labelledby="notes-h">
     <h2 id="notes-h">Notes on running agents</h2>
     <ul>
+      <li><a href="posts/the-12-questions.html"><h3>The 12 questions I ask before an agent goes live</h3><time>November 2026</time><p>Twelve yes or no checks, in six groups, that decide whether an agent is ready for real users. Any no blocks the launch.</p></a></li>
       <li><a href="posts/why-agents-should-say-i-dont-know.html"><h3>Why I made my agents say I don&rsquo;t know</h3><time>October 2026</time><p>A confident wrong answer is worse than no answer. The three guardrails that make agents check first and refuse cleanly.</p></a></li>
       <li><a href="posts/running-agents-in-production.html"><h3>Running agents in production is an operations problem</h3><time>October 2026</time><p>Anyone can demo an agent. Evals, rollback, observability, and an operating model are why they stay running.</p></a></li>
       <li><a href="posts/anatomy-of-an-agentic-platform.html"><h3>Anatomy of an agentic platform</h3><time>October 2026</time><p>The layers underneath the pitch, and what breaks without each one.</p></a></li>
@@ -553,6 +589,35 @@ footer { border-top: 1px solid var(--rule); padding: 24px 0 36px; font-size: 14p
   $("spec").addEventListener("input", update);
   $("spec").addEventListener("change", update);
   writeForm(PRESETS.bad);
+})();
+</script>
+<script>
+(function () {
+  var big = document.getElementById("lastCommit"), msg = document.getElementById("lastCommitMsg");
+  if (!big || !msg) return;
+  var DEFAULTS = /^(add files via upload|update |create |delete |merge |initial commit|rename |upload )/i;
+  function rel(iso) {
+    var secs = (new Date(iso).getTime() - Date.now()) / 1000, abs = Math.abs(secs);
+    var units = [["day", 86400], ["hour", 3600], ["minute", 60]], f = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
+    for (var i = 0; i < units.length; i++) if (abs >= units[i][1]) return f.format(Math.round(secs / units[i][1]), units[i][0]);
+    return "just now";
+  }
+  function show(c) {
+    big.textContent = rel(c.d);
+    var m = (c.m || "").trim();
+    msg.textContent = m && !DEFAULTS.test(m) ? m.slice(0, 90) : "17 skills, all tested, MIT licensed.";
+  }
+  var KEY = "gh-last-commit-v1";
+  try { var c = JSON.parse(sessionStorage.getItem(KEY)); if (c && Date.now() - c.t < 600000) { show(c.v); return; } } catch (e) {}
+  fetch("https://api.github.com/repos/amir-sohel-builds/agent-skills/commits?per_page=10")
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (list) {
+      var real = list.filter(function (x) { return x.commit.message.indexOf("Merge ") !== 0; })[0] || list[0];
+      var v = { m: real.commit.message.split("\n")[0], d: real.commit.author.date };
+      try { sessionStorage.setItem(KEY, JSON.stringify({ t: Date.now(), v: v })); } catch (e) {}
+      show(v);
+    })
+    .catch(function () {});
 })();
 </script>
 </body>
