@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 12 questions I ask before an agent goes live | Amir Sohel</title>
+<meta name="description" content="Twelve yes or no questions, in six groups, that decide whether an AI agent is ready for real users. Any no blocks the launch.">
+<meta property="og:title" content="The 12 questions I ask before an agent goes live">
+<meta property="og:description" content="Twelve yes or no questions that decide whether an agent is ready for production. Any no blocks the launch.">
+<meta property="og:image" content="https://amir-sohel-builds.github.io/og.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script>try{var r=document.documentElement,t=localStorage.getItem("theme");if(t)r.setAttribute("data-theme",t);if(localStorage.getItem("size")==="large")r.setAttribute("data-size","large");}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f5f6f8; --ink:#0b1220; --soft:#2b3548; --muted:#5b667a; --rule:#d3d8e0; --blue:#0154fc; --wash:#e4ecff;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif; --text:"Instrument Sans",-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+:root[data-theme="dark"] { --paper:#0a0f1a; --ink:#eef2f9; --soft:#c9d3e4; --muted:#93a1ba; --rule:#25304a; --blue:#6ea8fe; --wash:#12224a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#0a0f1a; --ink:#eef2f9; --soft:#c9d3e4; --muted:#93a1ba; --rule:#25304a; --blue:#6ea8fe; --wash:#12224a; } }
+html[data-size="large"] body { zoom:1.15; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--paper); color:var(--ink); font:400 19px/1.68 var(--text); -webkit-font-smoothing:antialiased; }
+a { color:var(--blue); } a:focus-visible, button:focus-visible { outline:2px solid var(--blue); outline-offset:3px; }
+::selection { background:var(--blue); color:#fff; }
+.wrap { max-width:1040px; margin:0 auto; padding-inline:clamp(20px,5vw,40px); }
+.col { max-width:700px; }
+.nav { position:sticky; top:0; z-index:10; background:color-mix(in srgb,var(--paper) 88%,transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--rule); }
+.nav .wrap { display:flex; align-items:center; justify-content:space-between; height:58px; }
+.brand { display:flex; align-items:center; gap:10px; font:700 17px var(--display); letter-spacing:-0.01em; text-decoration:none; color:var(--ink); }
+.brand img { width:26px; height:26px; }
+.navr { display:flex; align-items:center; gap:22px; font-size:15px; font-weight:500; }
+.navr a { color:var(--muted); text-decoration:none; } .navr a:hover { color:var(--ink); }
+.navr button { font:600 13.5px var(--text); color:var(--ink); background:transparent; border:1px solid var(--rule); border-radius:999px; padding:6px 12px; cursor:pointer; }
+.navr button:hover, .navr button[aria-pressed="true"] { border-color:var(--blue); color:var(--blue); }
+h1,h2,h3 { font-family:var(--display); letter-spacing:-0.03em; text-wrap:balance; }
+header.post { padding-top:clamp(48px,9vh,96px); }
+.kicker { font-size:15px; color:var(--muted); }
+h1 { margin-top:14px; font-weight:800; font-size:clamp(38px,6.4vw,72px); line-height:1.02; letter-spacing:-0.04em; }
+.stand { margin-top:22px; font-size:clamp(20px,2.4vw,25px); line-height:1.45; color:var(--soft); }
+.prose p { margin-top:18px; color:var(--soft); }
+.prose p:first-child { margin-top:0; }
+.intro { margin-top:36px; }
+.intro p + p { margin-top:18px; }
+
+/* diagram: the launch gate */
+.gate { margin:48px 0 8px; display:grid; grid-template-columns:150px 1fr 170px; gap:18px; align-items:center; }
+.end { border:1px solid var(--rule); border-radius:12px; padding:16px 18px; font-size:15.5px; line-height:1.4; color:var(--soft); }
+.end b { display:block; font:700 18px var(--display); letter-spacing:-0.02em; color:var(--ink); margin-bottom:4px; }
+.end.out { border-color:var(--blue); background:var(--wash); }
+.lanes { display:grid; gap:8px; position:relative; }
+.lane { display:grid; grid-template-columns:104px 1fr; gap:14px; align-items:center; padding:11px 14px; border:1px solid var(--rule); border-radius:10px; }
+.lane.key { background:var(--wash); box-shadow:inset 3px 0 0 var(--blue); }
+.lane > b { font:700 16px var(--display); letter-spacing:-0.02em; }
+.ids { display:flex; flex-wrap:wrap; gap:6px; }
+.ids span { font-size:14px; line-height:1.3; color:var(--soft); border:1px solid var(--rule); border-radius:6px; padding:3px 8px; background:var(--paper); }
+.ids i { font:600 12.5px var(--mono); font-style:normal; color:var(--blue); margin-right:6px; }
+.arrow { position:absolute; }
+.cap { margin-top:12px; font-size:15px; color:var(--muted); }
+@media (max-width:860px) {
+  .gate { grid-template-columns:1fr; gap:10px; }
+  .end { text-align:left; }
+  .gate .dn { text-align:center; color:var(--muted); font-size:20px; line-height:1; }
+}
+@media (min-width:861px) { .gate .dn { display:none; } }
+@media (min-width:861px) { .end { position:relative; } .end::after { content:"\2192"; position:absolute; right:-18px; top:50%; transform:translateY(-50%); color:var(--blue); font-weight:700; font-size:20px; line-height:1; } .end.out::after { content:none; } .end.out::before { content:"\2192"; position:absolute; left:-18px; top:50%; transform:translateY(-50%); color:var(--blue); font-weight:700; font-size:20px; line-height:1; } }
+
+.prose h2 { margin-top:56px; font-weight:800; font-size:clamp(30px,4vw,40px); line-height:1.08; padding-top:22px; border-top:1px solid var(--rule); }
+.prose h2 small { display:block; margin-top:6px; font:500 16px var(--text); letter-spacing:0; color:var(--muted); }
+.prose h3 { margin-top:32px; font-weight:700; font-size:clamp(21px,2.6vw,25px); line-height:1.2; display:flex; gap:12px; align-items:baseline; }
+.prose h3 code { flex:none; font:600 14px var(--mono); color:var(--blue); background:var(--wash); padding:2px 8px; border-radius:6px; }
+.prose h3 + p { margin-top:10px; }
+.prose code.inl { font:500 16px var(--mono); background:var(--wash); padding:1px 6px; border-radius:4px; }
+.cta { margin-top:56px; padding:28px; border:1px solid var(--rule); border-radius:14px; background:var(--wash); }
+.cta h2 { border:0; margin:0; padding:0; font-size:clamp(24px,3vw,32px); }
+.cta p { margin-top:10px; }
+.cta .btns { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+.btn { display:inline-block; font:600 15.5px var(--text); text-decoration:none; padding:12px 22px; border-radius:8px; border:1px solid var(--ink); color:var(--ink); }
+.btn.primary { background:var(--ink); color:var(--paper); } .btn.primary:hover { background:var(--blue); border-color:var(--blue); color:#fff; }
+.btn:not(.primary):hover { border-color:var(--blue); color:var(--blue); }
+.by { margin-top:40px; padding-bottom:72px; font-size:15.5px; color:var(--muted); }
+footer { border-top:1px solid var(--rule); padding:24px 0 36px; font-size:14px; color:var(--muted); }
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="../index.html"><img src="../favicon.svg" alt="">Amir Sohel</a>
+  <nav class="navr">
+    <a href="../index.html#notes">All notes</a>
+    <button id="sizeToggle" type="button" aria-pressed="false" aria-label="Larger text">A+</button>
+    <button id="themeToggle" type="button">Dark</button>
+  </nav>
+</div></header>
+
+<main>
+<header class="post wrap">
+  <div class="col">
+    <p class="kicker">Note, November 2026</p>
+    <h1>The 12 questions I ask before an agent goes live</h1>
+    <p class="stand">A demo has to work once. Production has to work on a bad Tuesday, for someone who never read the instructions.</p>
+  </div>
+</header>
+
+<article class="wrap">
+  <div class="col prose intro">
+    <p>Before an agent goes near real users, I ask twelve questions. Each one has a yes or no answer. Any no blocks the launch.</p>
+    <p>Almost none of them are about the model. The model is the smallest part of an agent in production. The rest is ownership, evidence, undo buttons, and limits, and that is where launches go wrong.</p>
+    <p>I turned the list into a script, so the answer does not depend on who is in the room. You can <a href="../index.html#try">try it in your browser</a> or <a href="https://github.com/amir-sohel-builds/agent-skills/tree/main/skills/agent-launch-readiness">read the code</a>. Here is the list, and why each question is on it.</p>
+  </div>
+
+  <figure class="gate" aria-label="The launch gate: an agent spec passes through six groups of checks to a GO or NO-GO verdict">
+    <div class="end"><b>Agent spec</b>One JSON file describing the agent.</div>
+    <div class="dn" aria-hidden="true">&darr;</div>
+    <div class="lanes">
+      <div class="lane"><b>Own it</b><div class="ids"><span><i>A1</i>Named owner</span></div></div>
+      <div class="lane key"><b>Ground it</b><div class="ids"><span><i>A2</i>Approved sources</span><span><i>A3</i>Refuses without a source</span></div></div>
+      <div class="lane"><b>Prove it</b><div class="ids"><span><i>A4</i>Eval suite</span><span><i>A5</i>Pass rate clears the bar</span></div></div>
+      <div class="lane"><b>Undo it</b><div class="ids"><span><i>A6</i>One-step rollback</span><span><i>A7</i>Versioned prompts</span></div></div>
+      <div class="lane"><b>Contain it</b><div class="ids"><span><i>A9</i>Human approves writes</span><span><i>A10</i>Caller&rsquo;s permissions</span><span><i>A12</i>Privacy reviewed</span></div></div>
+      <div class="lane"><b>Watch it</b><div class="ids"><span><i>A8</i>Cost cap</span><span><i>A11</i>Logs and traces</span></div></div>
+    </div>
+    <div class="dn" aria-hidden="true">&darr;</div>
+    <div class="end out"><b>GO or NO-GO</b>GO only if all twelve pass. Every gap is named.</div>
+  </figure>
+  <p class="cap col">The launch gate. Ground it is highlighted because it is the layer I care about most.</p>
+
+  <div class="col prose">
+    <h2>Own it</h2>
+    <h3><code>A1</code>Is there a named owner?</h3>
+    <p>A person, not a team alias. The owner is who gets the call when the agent is wrong, and who can switch it off. Without one, a wrong agent keeps running until a customer notices.</p>
+    <p>I also ask for an escalation contact, but that one only warns. Owners go on holiday.</p>
+
+    <h2>Ground it</h2>
+    <h3><code>A2</code>Are the approved sources listed?</h3>
+    <p>An agent should know where its answers are allowed to come from. Write the sources down. If you cannot list them, you cannot test them, and you cannot say what the agent should have known.</p>
+    <h3><code>A3</code>Does it refuse when it cannot verify?</h3>
+    <p>If the answer is not in an approved source, the right output is &ldquo;I don&rsquo;t know.&rdquo; A confident wrong answer costs more than no answer, because people act on it. I wrote more about this in <a href="why-agents-should-say-i-dont-know.html">why I made my agents say I don&rsquo;t know</a>.</p>
+
+    <h2>Prove it</h2>
+    <h3><code>A4</code>Is there an eval suite?</h3>
+    <p>An agent without evals is an opinion. The suite does not need to be big on day one. It needs to exist, and to run before every release.</p>
+    <h3><code>A5</code>Does the pass rate clear the bar?</h3>
+    <p>Set the bar before you see the number. The checker defaults to 90, and a team can raise it. A pass rate within three points of the bar still passes, with a warning, because the next prompt change will move it.</p>
+
+    <h2>Undo it</h2>
+    <h3><code>A6</code>Can you roll it back in one step?</h3>
+    <p>You will ship a bad prompt. The only question is how long it stays live. If undoing it takes a ticket and a meeting, you have a slow outage.</p>
+    <h3><code>A7</code>Are the prompts versioned?</h3>
+    <p>Treat prompts like code. Then rollback is a pointer change, and when behavior shifts you can say exactly what changed.</p>
+
+    <h2>Contain it</h2>
+    <h3><code>A9</code>Does every write action need a human to approve it?</h3>
+    <p>Reading wrong is cheap. Writing wrong is not. Anything that changes something, like a refund, a ticket, or a message, waits for a person until the agent has earned more trust, with the evals to show it.</p>
+    <h3><code>A10</code>Does it run with the caller&rsquo;s permissions?</h3>
+    <p>An agent on a shared admin credential can see and do more than the person using it. Use delegated access, so it acts as the user and can never go further than they could.</p>
+    <h3><code>A12</code>Is privacy reviewed when it handles personal data?</h3>
+    <p>Before launch, not after. It is the one conditional check. When it applies, it is not optional.</p>
+
+    <h2>Watch it</h2>
+    <h3><code>A8</code>Is there a monthly cost cap?</h3>
+    <p>A runaway loop shows up as a bill, not a bug report. Set the cap before launch, and decide what happens when it is hit.</p>
+    <h3><code>A11</code>Are logs and traces on?</h3>
+    <p>If you cannot see what the agent did, you cannot debug it, audit it, or improve it.</p>
+
+    <h2>What a script cannot decide</h2>
+    <p>The checker does not judge whether the sources are the right ones, whether the evals are any good, or whether the cap is sensible. It checks that each thing exists and clears the bar your team set. People make those calls, and that is on purpose.</p>
+    <p>Everything else is deterministic. If a script can ask the question, the LLM stays out of it. It gives the same answer twice, it costs nothing to run, and you can test it. The checker has its own evals, like every skill in the repo.</p>
+
+    <div class="cta">
+      <h2>Try it on your own agent</h2>
+      <p>It takes about a minute, and nothing leaves your browser.</p>
+      <div class="btns">
+        <a class="btn primary" href="../index.html#try">Open the checker</a>
+        <a class="btn" href="https://github.com/amir-sohel-builds/agent-skills/tree/main/skills/agent-launch-readiness">Get the code</a>
+      </div>
+    </div>
+    <p class="by">By Amir Sohel, Staff Technical Program Manager. This is a personal project, built in my own time. It is not my employer&rsquo;s work.</p>
+  </div>
+</article>
+</main>
+<footer><div class="wrap">&copy; 2026 Amir Sohel. <a href="../index.html">Back to the portfolio</a></div></footer>
+
+<script>
+(function () {
+  var r = document.documentElement, tb = document.getElementById("themeToggle"), sb = document.getElementById("sizeToggle");
+  function cur() { return r.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); }
+  function label() { var d = cur() === "dark"; tb.textContent = d ? "Light" : "Dark"; tb.setAttribute("aria-label", "Switch to " + (d ? "light" : "dark") + " mode"); }
+  label();
+  tb.addEventListener("click", function () { var n = cur() === "dark" ? "light" : "dark"; r.setAttribute("data-theme", n); try { localStorage.setItem("theme", n); } catch (e) {} label(); });
+  var big = r.getAttribute("data-size") === "large"; sb.setAttribute("aria-pressed", big);
+  sb.addEventListener("click", function () { big = !big; if (big) r.setAttribute("data-size", "large"); else r.removeAttribute("data-size"); sb.setAttribute("aria-pressed", big); try { localStorage.setItem("size", big ? "large" : ""); } catch (e) {} });
+})();
+</script>
+</body>
+</html>
